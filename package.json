@@ -6,14 +6,17 @@
   "repository": "git@github.com:Shahor/moves.git",
   "author": "Alexandre Gaudencio <shahor@shahor.fr>",
   "license": "MIT",
-  "scripts" : {
-	  "lint" : "node_modules/.bin/eslint './**/*.js'",
-	  "pretest": "node_modules/.bin/babel src --out-dir lib",
-	  "prepublish": "node_modules/.bin/babel src --out-dir lib"
+  "scripts": {
+    "prepublish": "node_modules/.bin/webpack",
+    "lint": "node_modules/.bin/eslint './**/*.js'",
+    "build": "rm -rf ./lib && node_modules/.bin/webpack",
+	"watch" : "node_modules/.bin/webpack --watch"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
+    "babel-loader": "^6.2.10",
     "babel-preset-env": "^1.1.8",
-    "eslint": "^3.13.1"
+    "eslint": "^3.13.1",
+    "webpack": "^1.14.0"
   }
 }
