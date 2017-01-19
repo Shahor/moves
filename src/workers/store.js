@@ -1,4 +1,5 @@
 import uuid from 'uuid/v4'
+import config from '../config'
 
 const POST_SIZE = 10
 
@@ -11,9 +12,11 @@ const dealWithResponse = ({ target }) => {
 }
 
 const sendData = (data) => {
+	const { method, endpoint } = config
+
 	let request = new XMLHttpRequest()
 	request.addEventListener("load", dealWithResponse)
-	request.open("GET", "/")
+	request.open(method, endpoint)
 	request.send(
 		JSON.stringify(data)
 	)
