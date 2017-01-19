@@ -12,7 +12,4 @@ node_modules
 
 # Generated with tooling
 lib/
-
-.vscode
-
 .*~
