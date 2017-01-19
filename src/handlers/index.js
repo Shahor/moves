@@ -1,10 +1,10 @@
-import MouseMove from './mousemove'
-import MouseClick from './mouseclick'
-import MouseWheel from './mousewheel'
+import * as MouseMove from './mousemove'
+import * as MouseClick from './mouseclick'
+import * as Scroll from './scroll'
 
 
 export default {
 	MouseClick,
 	MouseMove,
-	MouseWheel
+	Scroll
 }

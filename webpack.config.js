@@ -1,8 +1,11 @@
 module.exports = {
-	entry : './src/index.js',
+	entry : {
+		bundle : './src/index.js',
+		store_worker : './src/workers/store.js'
+	},
 	output : {
 		path : './lib',
-		filename : 'index.js'
+		filename : '[name].js'
 	},
 	devtool : 'source-map',
 	module : {

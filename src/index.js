@@ -3,17 +3,16 @@
 // } from './handlers'
 
 import Handlers from './handlers'
-import Session from './session'
+import Store from './store'
 
 const { 
 	MouseMove,
 	MouseClick,
-	MouseWheel
+	Scroll
 } = Handlers
 
 window.addEventListener('DOMContentLoaded', () => {
-	Session.start()
-	window.addEventListener('mousemove', MouseMove)
-	window.addEventListener('click', MouseClick)
-	window.addEventListener('mousewheel', MouseWheel)
+	window.addEventListener(MouseMove.EVENT_NAME, MouseMove.handler)
+	window.addEventListener(MouseClick.EVENT_NAME, MouseClick.handler)
+	window.addEventListener(Scroll.EVENT_NAME, Scroll.handler)
 })
