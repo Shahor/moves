@@ -5,7 +5,8 @@ module.exports = {
 	},
 	output : {
 		path : './lib',
-		filename : '[name].js'
+		filename : '[name].js',
+		library : ['Moves']
 	},
 	devtool : 'source-map',
 	module : {

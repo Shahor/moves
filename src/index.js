@@ -1,18 +1,18 @@
-// import {
-// 	MouseMove
-// } from './handlers'
-
 import Handlers from './handlers'
 import Store from './store'
 
-const { 
-	MouseMove,
-	MouseClick,
-	Scroll
-} = Handlers
+const doIt = (method, element = window) => {
+	Object.keys(Handlers).forEach((key) => {
+		let eventHandler = Handlers[key]
 
-window.addEventListener('DOMContentLoaded', () => {
-	window.addEventListener(MouseMove.EVENT_NAME, MouseMove.handler)
-	window.addEventListener(MouseClick.EVENT_NAME, MouseClick.handler)
-	window.addEventListener(Scroll.EVENT_NAME, Scroll.handler)
-})
+		window[method](eventHandler.EVENT_NAME, eventHandler.handler)
+	})
+}
+
+export const start = (params) => {
+	doIt('addEventListener')
+}
+
+export const stop = () => {
+	doIt('removeEventListener')
+}
